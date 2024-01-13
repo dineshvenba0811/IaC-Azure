@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+        {
+            "name": "[concat(copyIndex(),'storedineshvenba0811')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2015-06-15",
+            "location": "North Europe",
+            "tags": {
+                "displayName": "storageaccount1"
+            },
+            "properties": {
+                "accountType": "Standard_LRS"
+            },
+            "copy": {
+                "name": "storage copy",
+                "count" : 3
+
+            }
+        }
+    ]
+    
+}
